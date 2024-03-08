@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - main
-      - develop
   pull_request:
     branches:
       - main
-      - develop
 
 jobs:
   build:
@@ -25,11 +23,11 @@ jobs:
         with:
           php-version: ${{ env.PHP_VERSION }}
 
-      - name: install dependencies
+      - name: install composer
         run: composer install
       
-      - name: Build
+      - name: test all
         run: composer test-all
 
-      - name: Test
+      - name: lint code
         run: composer lint-code
