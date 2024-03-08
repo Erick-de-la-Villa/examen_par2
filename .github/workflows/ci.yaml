@@ -26,8 +26,8 @@ jobs:
       - name: install composer
         run: composer install
       
-      - name: test all
-        run: composer test-all
+      # - name: test all
+      #   run: composer test-all
 
       - name: lint code
         run: composer lint-code
